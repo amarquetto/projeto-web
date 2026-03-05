@@ -1,35 +1,35 @@
-# Importa a classe Flask da biblioteca flask
-# Sem essa linha, o Python não sabe o que é "Flask"
-from flask import Flask
+from flask import Flask, render_template
 
-# Cria a instância da aplicação Flask
-# __name__ é uma variável especial do Python que contém o nome do módulo atual
-# O Flask usa isso para saber onde procurar os templates e arquivos estáticos
+
 app = Flask(__name__)
 
-
-# O decorador @app.route define qual URL aciona esta função
-# '/' é a rota raiz — o endereço principal do site (ex: http://localhost:5000/)
 @app.route('/')
 def pagina_inicial():
-    # Esta função retorna o que o navegador vai receber como resposta
-    # Por enquanto, retornamos uma string HTML simples
-    return '<h1>Olá, mundo!</h1><p>Meu primeiro servidor Flask está funcionando.</p>'
+    return render_template('index.html')
 
-@app.route('/varias_linhas')
-def varias_linhas():
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
+
+@app.route('/bootstrap')
+def bootstrap():
+    return render_template('bootstrap.html')
+
+@app.route('/sobre/fatec')
+def sobre_fatec():
     return '''
-        <h1>Várias linhas</h1>
-        <p>Este é um exemplo de resposta em várias linhas.</p>
-        <ul>
-            <li>Item I</li>
-            <li>Item II</li>
-            <li>Item III</li>
-        </ul>
+        <h1> Pagina desenvolvida sobre a Fatec </h1>
+        <p>Desenvolvida na <b>FATEC</b></h1>
+        <a href="/">Voltar ao início</a>
     '''
 
-# Bloco de execução: só roda quando o arquivo é executado diretamente
+@app.route('/cor/<cor1>')
+def exibe_cor(cor1):
+    return f'<h1 style="color:{cor1}"> A cor escolhida foi: {cor1}</h1>'
+
+@app.route('/cor/<cor1>/<cor2>')
+def exibe_cor2(cor1, cor2):
+    return f'<h1 style="color:{cor1}"> A cor escolhida foi: {cor1} e <b style="color{cor2}">{cor2}</b></h1>'
+
 if __name__ == '__main__':
-    # debug=True ativa o recarregamento automático ao salvar o arquivo
-    # NUNCA use debug=True em produção (servidor público)
     app.run(debug=True)

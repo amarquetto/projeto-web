@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Sistema</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #4e73df;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background: #f8f9fc;
+            padding: 25px;
+            border-left: 6px solid #4e73df;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #1cc88a;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #4e73df;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background-color: #4e73df;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2e59d9;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Sobre o Sistema</h1>
+        <p class="subtitle">Desenvolvimento Web com Flask e boas práticas de Programação para Internet</p>
+
+        <div class="section">
+            <h2>Apresentação do Projeto</h2>
+            <p>
+                Este sistema foi desenvolvido como parte da disciplina de 
+                <span class="highlight">Programação para Internet</span>, com o objetivo de aplicar 
+                conceitos fundamentais do desenvolvimento web utilizando o framework Flask.
+            </p>
+            <p>
+                O projeto integra backend e frontend, permitindo compreender na prática
+                como aplicações web são estruturadas e executadas.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Desenvolvimento de Aplicações com Flask</h2>
+            <p>
+                Flask é um microframework em Python que possibilita a criação de aplicações
+                web de forma simples, flexível e organizada. Sua leveza permite que o desenvolvedor
+                tenha maior controle sobre a estrutura do sistema.
+            </p>
+            <p>
+                Através da definição de rotas, o servidor responde às requisições do usuário,
+                retornando páginas HTML ou dados específicos, estabelecendo a comunicação
+                entre cliente e servidor.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Principais Conceitos Aplicados</h2>
+            <ul>
+                <li>Criação de rotas para navegação entre páginas</li>
+                <li>Integração entre backend (Python) e frontend (HTML/CSS)</li>
+                <li>Organização estrutural de um sistema web</li>
+                <li>Aplicação de boas práticas de desenvolvimento</li>
+                <li>Estilização para melhor experiência do usuário</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Objetivo do Projeto</h2>
+            <p>
+                O principal objetivo é compreender o funcionamento da comunicação entre
+                cliente e servidor, além de estruturar uma aplicação web completa,
+                desde a lógica de programação até a interface visual.
+            </p>
+            <p>
+                A utilização de HTML e CSS contribui para a criação de interfaces
+                modernas, responsivas e visualmente organizadas, tornando o sistema
+                mais profissional e intuitivo.
+            </p>
+        </div>
+
+        <a href="/" class="btn">Voltar ao Início</a>
+        <a href="/sobre" class="btn">Ir para sobre</a>
+        <a href="/cor/red" class="btn">Ir para Página Vermelha</a>
+        <a href="/bootstrap" class="btn">Ir para Bootstrap</a>
+        <div class="footer">
+            Sistema desenvolvido para fins acadêmicos • 2026
+        </div>
+
+    </div>
+
+</body>
+</html>
